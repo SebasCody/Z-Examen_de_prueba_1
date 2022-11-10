@@ -62,6 +62,8 @@ public class Ejercicio_02 {
         
         
         //-------------------------------------------------------------------
+        
+        
         System.out.print("Introduce un número entero:");
         int valorTeclado = Integer.parseInt(entrada.nextLine());
         int contador = 0;

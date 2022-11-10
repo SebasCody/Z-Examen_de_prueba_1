@@ -19,7 +19,10 @@ public class Ejercicio_01 {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
         
+        System.out.println("*****PALINDROMOS*****");
+        System.out.println("Introduce una palabra: ");
         String palabra = entrada.nextLine();
+        
         int tamañoPalabra = palabra.length();
         char[] arrayNormal = new char[tamañoPalabra];
         char[] arrayReves = new char[tamañoPalabra];
@@ -27,10 +30,15 @@ public class Ejercicio_01 {
         int k;
         boolean esPalindromo = false;
         
+        
+        
+        System.out.println("-----------------------------------------------------");
+        
         for (int i = 0; i < tamañoPalabra; i++) {
             caracter = palabra.charAt(i);
             arrayNormal[i] = caracter;
         }
+        System.out.print("Normal: ");
         System.out.println(arrayNormal);
         
         k=tamañoPalabra-1;
@@ -38,12 +46,11 @@ public class Ejercicio_01 {
             arrayReves[i] = arrayNormal[k];
             k--;
         }
-        
+        System.out.print("Reves: ");
         System.out.println(arrayReves);
         
+        
         for (int i = 0; i < arrayReves.length; i++) {
-            
-            
             
             if (arrayNormal[i] == arrayReves[i]) {
                 esPalindromo = true;
