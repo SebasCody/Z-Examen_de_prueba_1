@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+/**
+ *
+ * @author Sebas_work
+ */
+public class Ejercicio_004_examen_funciones_diciembre_palindromo {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Escribe una palabra para comprobar si es palíndromo:");
+        String cadena = entrada.nextLine();
+        System.out.println("Cadena escrita normal: " + cadena);
+        String palabraInversa = volteaPalabra(cadena);
+        System.out.println("Cadena escrita al revés: " + palabraInversa);
+
+        //La palabra inversa y la normal la meto en la funcion que
+        //comprueba si es palíndomo o no
+        if (esPalindromo(cadena, palabraInversa) == true) {
+            System.out.println("La cadena proporcionada es un palíndromo");
+        } else {
+            System.out.println("La cadena proporcionada no es un palíndromo");
+        }
+
+    }
+
+    
+    
+    
+    //FUNCION 1
+    public static String volteaPalabra(String palabra) {
+
+        String palabraVolteada = "";
+        for (int i = palabra.length() - 1; i >= 0; i--) {
+            palabraVolteada = palabraVolteada + palabra.charAt(i);
+
+        }
+        return palabraVolteada;
+
+    }
+
+    
+    
+    
+    
+    //FUNCION 2
+    public static boolean esPalindromo(String cadena, String cadenaReves) {
+
+        int contadorCoincidencias = 0;
+        for (int i = 0; i < cadenaReves.length(); i++) {
+            if (Character.toLowerCase(cadenaReves.charAt(i)) == Character.toLowerCase(cadena.charAt(i))) {
+                contadorCoincidencias++;
+            }
+
+        }
+        //SOLO SERA PALINDROMO SI TODAS LAS LETRAS COINCIDEN,
+        //POR ESO NECESITO LLEVAR EL CONTROL DE LAS COINCIDENCIAS
+        //Y LUEGO CONDICIONAR A QUE ESE CONTROL COINCIDA CON EL TAMAÑO DE
+        //LA PALABRA
+        if (contadorCoincidencias == cadena.length()) {
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+}
