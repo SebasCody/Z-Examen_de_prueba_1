@@ -32,7 +32,7 @@ public class Ejercicio_02_examen_funciones_diciembre {
             System.out.println("Introduce una frase de al menos 4 palabras: ");
             frase = entrada.nextLine();
             
-            if (totalPalabras(frase) == 4) {
+            if (totalPalabras(frase) >= 4) {
                 tieneCuatroPalabras = true;
             }else{
                 System.out.println("ERROR. La contraseña que vas a generar debe tener como MÍNIMO cuatro palabras");
@@ -44,13 +44,11 @@ public class Ejercicio_02_examen_funciones_diciembre {
         
         String password = "";
         password = password + Character.toUpperCase(frase.charAt(0));
-        
-        int posicionEspacio;
-        
+                
         for (int i = 0; i < frase.length(); i++) {
             char caractInicialMinus;
             
-            if (frase.charAt(i) == ' ') {
+            if (frase.charAt(i) == ' ' && frase.charAt(i+1) != ' ') {
                 caractInicialMinus = frase.charAt(i+1);
                 password = password + caractInicialMinus;
             }
@@ -73,7 +71,7 @@ public class Ejercicio_02_examen_funciones_diciembre {
         int contadorEspacios = 0; 
         
         for (int i = 0; i < tamano; i++) {
-            if (cadena.charAt(i) == ' ') {
+            if (cadena.charAt(i) == ' ' && cadena.charAt(i+1) != ' ') {
                 contadorEspacios++;
             }
         }
